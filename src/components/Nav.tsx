@@ -182,25 +182,6 @@ export default function Nav() {
               </button>
             </div>
           </div>
-
-          <button
-            style={{
-              fontFamily: 'Jost, sans-serif',
-              fontSize: '12px',
-              letterSpacing: '.18em',
-              textTransform: 'uppercase',
-              color: 'var(--on-gold)',
-              background: 'linear-gradient(100deg, var(--gold-2), var(--gold) 45%, var(--gold-3))',
-              border: 0,
-              borderRadius: '999px',
-              padding: '11px 22px',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              boxShadow: '0 6px 24px var(--veil)',
-            }}
-          >
-            {t.nav.signIn}
-          </button>
         </div>
       </div>
     </header>
