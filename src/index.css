@@ -220,6 +220,12 @@ a:hover { color: var(--gold-2); }
   background: var(--veil) !important;
 }
 
+/* Library card grid: fixed 7 columns per "ver más" page (7x3) on desktop */
+.tara-library-grid { grid-template-columns: repeat(7, 1fr); }
+@media (max-width: 1080px) { .tara-library-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 780px) { .tara-library-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .tara-library-grid { grid-template-columns: repeat(2, 1fr); } }
+
 /* "Start here" step cards */
 .tara-step-card {
   text-decoration: none;

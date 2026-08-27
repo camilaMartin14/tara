@@ -7,7 +7,9 @@ type Suit = 'wands' | 'cups' | 'swords' | 'pentacles';
 
 export const FILTER_KEYS: Filter[] = ['all', 'major', 'wands', 'cups', 'swords', 'pentacles'];
 const SUIT_KEYS: Suit[] = ['wands', 'cups', 'swords', 'pentacles'];
-const PAGE_SIZE = 24;
+const GRID_COLUMNS = 7;
+const GRID_ROWS = 3;
+const PAGE_SIZE = GRID_COLUMNS * GRID_ROWS;
 
 const SUIT_COLORS: Record<Suit, { accent: string; glow: string }> = {
   wands: { accent: '#E0663D', glow: 'rgba(224,102,61,.18)' },
@@ -154,7 +156,7 @@ export default function LibrarySection({ filter, onFilterChange }: Props) {
         </div>
       ) : (
         <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '24px' }}>
+          <div className="tara-library-grid" style={{ display: 'grid', gap: '24px' }}>
             {visibleCards.map(card => (
               <CardTile key={card.id} card={card} />
             ))}
