@@ -154,11 +154,9 @@ export default function LibrarySection({ filter, onFilterChange }: Props) {
         </div>
       ) : (
         <>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '24px' }}>
             {visibleCards.map(card => (
-              <div key={card.id} style={{ flex: '1 1 140px', maxWidth: '300px' }}>
-                <CardTile card={card} />
-              </div>
+              <CardTile key={card.id} card={card} />
             ))}
           </div>
           {hasMore && (
