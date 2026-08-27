@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: 'Cinzel', serif;
+  --font-garamond: 'Cormorant Garamond', Georgia, serif;
+  --font-jost: 'Jost', sans-serif;
+}
+
+:root {
+  --bg: #0B0413;
+  --page: radial-gradient(120% 80% at 50% -10%, #3A1470 0%, #1B0733 42%, #0B0413 100%);
+  --header: linear-gradient(#0B0413cc, #0B041366);
+  --panel: linear-gradient(165deg, rgba(123, 63, 228, .16), rgba(11, 4, 19, .5));
+  --premium: radial-gradient(90% 130% at 15% 0%, rgba(123, 63, 228, .5), rgba(11, 4, 19, .9));
+  --card-back: repeating-conic-gradient(from 0deg at 50% 50%, #2A0B50 0deg 15deg, #1B0733 15deg 30deg);
+  --ink: #F8F3FF;
+  --ink-2: #D6C9EA;
+  --ink-3: #A79BBE;
+  --ink-4: #8E7FA8;
+  --gold: #D9A94C;
+  --gold-2: #F0D08A;
+  --gold-3: #A8761F;
+  --on-gold: #0B0413;
+  --silver: #C9CBD8;
+  --violet: #7B3FE4;
+  --line: rgba(201, 203, 216, .16);
+  --line-2: rgba(217, 169, 76, .3);
+  --veil: rgba(123, 63, 228, .14);
+  --shadow: rgba(0, 0, 0, .6);
+  --stars-opacity: .55;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--ink-2);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+#root { min-height: 100vh; }
+
+.tara-section { scroll-margin-top: 90px; }
+
+/* Nav: desktop row, mobile hamburger */
+.tara-nav-toggle { display: none; }
+.tara-nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 16px 22px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.tara-nav-links { display: flex; gap: 6px; }
+
+@media (max-width: 860px) {
+  .tara-nav-toggle { display: flex; }
+  .tara-nav-panel {
+    display: none;
+    margin-left: 0;
+  }
+  .tara-nav-panel.tara-nav-panel-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--header);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-2);
+    padding: 14px 32px 24px;
+    gap: 14px;
+  }
+  .tara-nav-panel.tara-nav-panel-open .tara-nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-2); }
+::selection { background: var(--violet); color: #fff; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+
+@keyframes tara-spin { to { transform: rotate(360deg); } }
+@keyframes tara-spin-rev { to { transform: rotate(-360deg); } }
+@keyframes tara-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes tara-float-slow { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-22px) rotate(-4deg); } }
+@keyframes tara-glow { 0%, 100% { opacity: .35; } 50% { opacity: .85; } }
+@keyframes tara-twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .6; } }
+@keyframes tara-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* Major Arcana grid tile */
+.tara-arcana-card { display: block; text-decoration: none; }
+.tara-arcana-frame {
+  transition: transform .7s cubic-bezier(.16,.6,.2,1), background .7s ease, box-shadow .7s ease;
+}
+.tara-arcana-frame .tara-arcana-img { transition: transform .9s cubic-bezier(.16,.6,.2,1); display: block; }
+.tara-arcana-card:hover .tara-arcana-frame,
+.tara-arcana-card:focus-visible .tara-arcana-frame {
+  transform: translateY(-5px);
+  background: linear-gradient(160deg, var(--gold-2), var(--violet)) !important;
+  box-shadow: 0 22px 48px var(--shadow), 0 0 34px var(--veil);
+}
+.tara-arcana-card:hover .tara-arcana-img,
+.tara-arcana-card:focus-visible .tara-arcana-img { transform: scale(1.03); }
+.tara-arcana-name { transition: color .5s ease; }
+.tara-arcana-card:hover .tara-arcana-name,
+.tara-arcana-card:focus-visible .tara-arcana-name { color: var(--gold-2); }
+.tara-arcana-key { transition: color .5s ease; }
+.tara-arcana-card:hover .tara-arcana-key,
+.tara-arcana-card:focus-visible .tara-arcana-key { color: var(--gold); }
+
+/* "Start here" step cards */
+.tara-step-card {
+  text-decoration: none;
+  transition: transform .6s cubic-bezier(.16,.6,.2,1), border-color .6s ease, box-shadow .6s ease;
+}
+.tara-step-card:hover, .tara-step-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--line-2) !important;
+  box-shadow: 0 14px 34px var(--shadow);
+}
+
+/* Suit fundamentals card */
+.tara-suit-card {
+  transition: transform .55s cubic-bezier(.16,.6,.2,1), border-color .55s ease, background .55s ease;
+  font-family: inherit;
+}
+.tara-suit-card:hover, .tara-suit-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--line-2) !important;
+  background: var(--veil) !important;
+}
+
+/* Journey stage card */
+.tara-journey-card {
+  transition: transform .6s cubic-bezier(.16,.6,.2,1), border-color .6s ease, box-shadow .6s ease;
+}
+.tara-journey-card:hover, .tara-journey-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--line-2) !important;
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* "See all" link with sliding arrow */
+.tara-see-all { display: inline-flex; align-items: center; gap: 6px; transition: color .5s ease, gap .5s ease; }
+.tara-see-all-arrow { transition: transform .5s cubic-bezier(.16,.6,.2,1); }
+.tara-see-all:hover, .tara-see-all:focus-visible { gap: 9px; }
+.tara-see-all:hover .tara-see-all-arrow,
+.tara-see-all:focus-visible .tara-see-all-arrow { transform: translateX(3px); }
+
+/* Gold CTA buttons */
+.tara-cta-gold { transition: transform .55s cubic-bezier(.16,.6,.2,1), box-shadow .55s ease, filter .55s ease; }
+.tara-cta-gold:hover, .tara-cta-gold:focus-visible {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 14px 38px var(--veil);
+  filter: brightness(1.04);
+}
+.tara-cta-gold:active { transform: translateY(-1px) scale(1.005); }
+
+/* Practice banner panel */
+.tara-banner-panel { transition: border-color .8s ease, box-shadow .8s ease; }
+.tara-banner-panel:hover { border-color: var(--gold); box-shadow: 0 0 60px var(--veil); }
+.tara-banner-panel:hover .tara-banner-orb { animation-duration: 4s; }
+.tara-banner-panel:hover .tara-banner-ring { animation-duration: 36s; }
+
+/* Responsive stacking for asymmetric two-column layouts */
+.tara-hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); }
+.tara-hero-visual { height: 560px; }
+.tara-cardofday-grid { grid-template-columns: minmax(0,1fr) minmax(0,260px); }
+.tara-fool-grid { grid-template-columns: minmax(0,180px) minmax(0,1fr); }
+.tara-modal-grid { grid-template-columns: minmax(0,260px) minmax(0,1fr); }
+
+@media (max-width: 780px) {
+  .tara-hero-grid { grid-template-columns: 1fr; }
+  .tara-hero-visual { height: 340px; transform: scale(.82); transform-origin: top center; }
+  .tara-cardofday-grid { grid-template-columns: 1fr; }
+  .tara-cardofday-grid > *:last-child { justify-self: center !important; }
+  .tara-fool-grid { grid-template-columns: 1fr; }
+  .tara-fool-grid > button { max-width: 200px; margin: 0 auto; }
+  .tara-modal-grid { grid-template-columns: 1fr; }
+}
+
+/* FAQ accordion */
+.tara-faq-card { transition: border-color .5s ease; }
+.tara-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows .55s ease, opacity .4s ease;
+}
+.tara-faq-answer.tara-faq-answer-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.tara-faq-answer > p { overflow: hidden; min-height: 0; }
