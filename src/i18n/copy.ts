@@ -7,7 +7,6 @@ export interface Copy {
     journey: string;
     reading: string;
     faq: string;
-    signIn: string;
     langHint: string;
     openMenu: string;
     closeMenu: string;
@@ -123,7 +122,6 @@ export const COPY: Record<Lang, Copy> = {
       journey: 'El Viaje',
       reading: 'Tirada',
       faq: 'Preguntas',
-      signIn: 'Entrar',
       langHint: 'Cambiar idioma',
       openMenu: 'Abrir menú',
       closeMenu: 'Cerrar menú',
@@ -296,7 +294,6 @@ export const COPY: Record<Lang, Copy> = {
       journey: 'The Journey',
       reading: 'Spread',
       faq: 'FAQ',
-      signIn: 'Sign in',
       langHint: 'Switch language',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',

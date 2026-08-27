@@ -231,7 +231,6 @@ export default function Home() {
           >
             ‹
           </button>
-          <div className="tara-arcana-fade tara-arcana-fade-left" aria-hidden="true" />
           <div className="tara-arcana-carousel" ref={arcanaCarouselRef}>
             {majorArcana.map(card => (
               <button
@@ -255,7 +254,6 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <div className="tara-arcana-fade tara-arcana-fade-right" aria-hidden="true" />
           <button
             type="button"
             onClick={() => scrollArcanaCarousel(1)}
