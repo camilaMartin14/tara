@@ -302,11 +302,18 @@ export default function Home() {
 
       <footer
         style={{
+          position: 'relative',
           borderTop: '1px solid var(--line)', padding: '32px 32px 44px', maxWidth: '1240px', margin: '0 auto',
           display: 'flex', flexDirection: 'column', gap: '24px',
           fontFamily: 'Jost, sans-serif', fontSize: '12px', letterSpacing: '.14em', color: 'var(--ink-4)',
         }}
       >
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -25%)', width: '600px', height: '600px', pointerEvents: 'none' }}>
+          <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '1px solid var(--line-2)', animation: 'tara-spin 90s linear infinite' }} />
+          <div style={{ position: 'absolute', inset: '58px', borderRadius: '50%', border: '1px dashed var(--line)', animation: 'tara-spin-rev 70s linear infinite' }} />
+          <div style={{ position: 'absolute', inset: '124px', borderRadius: '50%', border: '1px solid var(--veil)', boxShadow: '0 0 90px var(--veil) inset', animation: 'tara-glow 6s ease-in-out infinite' }} />
+        </div>
+
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <span style={{ fontFamily: 'Cinzel, serif', letterSpacing: '.3em', color: 'var(--silver)' }}>TARA</span>
           <div style={{ display: 'flex', gap: '28px' }}>
