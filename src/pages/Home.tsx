@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLang } from '../state/LangContext';
 import { toRoman } from '../utils/roman';
 import { useCardModal } from '../utils/cardModal';
+import { useJourneyStory } from '../utils/journeyStory';
 import CardOfDay from '../components/CardOfDay';
 import LibrarySection, { type Filter } from '../components/LibrarySection';
 import JourneySection from '../components/JourneySection';
+import JourneyStory from '../components/JourneyStory';
 import ReadingSection from '../components/ReadingSection';
 import FAQSection from '../components/FAQSection';
 
@@ -19,9 +21,17 @@ const STEP_ACTIONS: { anchor: string; filter?: Filter }[] = [
 export default function Home() {
   const { t, cards } = useLang();
   const { openCard } = useCardModal();
+  const { openStory } = useJourneyStory();
   const [filter, setFilter] = useState<Filter>('all');
   const heroCards = HERO_CARD_IDS.map(id => cards.find(c => c.id === id)).filter(Boolean) as typeof cards;
-  const majorArcana = cards.filter(c => c.arcana === 'major').slice(0, 5);
+  const majorArcana = cards.filter(c => c.arcana === 'major').sort((a, b) => a.number - b.number);
+  const arcanaCarouselRef = useRef<HTMLDivElement>(null);
+
+  function scrollArcanaCarousel(direction: 1 | -1) {
+    const el = arcanaCarouselRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * el.clientWidth * 0.8, behavior: 'smooth' });
+  }
 
   return (
     <main>
@@ -203,32 +213,57 @@ export default function Home() {
           </a>
         </div>
         <div style={{ marginBottom: '36px' }}>
-          <a href="#viaje" className="tara-see-all" style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', fontSize: '17px', color: 'var(--ink-3)' }}>
+          <a
+            href="#viaje"
+            onClick={e => { e.preventDefault(); openStory(0); }}
+            className="tara-see-all"
+            style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', fontSize: '17px', color: 'var(--ink-3)' }}
+          >
             {t.home.journeyCta}
           </a>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px,1fr))', gap: '22px' }}>
-          {majorArcana.map(card => (
-            <button
-              key={card.id}
-              onClick={() => openCard(card.id)}
-              className="tara-arcana-card"
-              style={{ display: 'block', width: '100%', textAlign: 'left', background: 'none', border: 0, padding: 0, cursor: 'pointer', font: 'inherit' }}
-            >
-              <div className="tara-arcana-frame" style={{ position: 'relative', borderRadius: '10px', padding: '7px', background: 'linear-gradient(160deg, var(--gold), var(--veil))', boxShadow: '0 18px 44px var(--shadow)' }}>
-                <div style={{ aspectRatio: '2/3', position: 'relative', borderRadius: '6px', overflow: 'hidden' }}>
-                  <img src={card.imageUrl} alt={card.name} className="tara-arcana-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div className="tara-arcana-carousel-wrap">
+          <button
+            type="button"
+            onClick={() => scrollArcanaCarousel(-1)}
+            aria-label={t.home.carouselPrev}
+            className="tara-carousel-arrow tara-carousel-arrow-prev"
+          >
+            ‹
+          </button>
+          <div className="tara-arcana-fade tara-arcana-fade-left" aria-hidden="true" />
+          <div className="tara-arcana-carousel" ref={arcanaCarouselRef}>
+            {majorArcana.map(card => (
+              <button
+                key={card.id}
+                onClick={() => openCard(card.id)}
+                className="tara-arcana-card"
+                style={{ display: 'block', textAlign: 'left', background: 'none', border: 0, padding: 0, cursor: 'pointer', font: 'inherit' }}
+              >
+                <div className="tara-arcana-frame" style={{ position: 'relative', borderRadius: '10px', padding: '7px', background: 'linear-gradient(160deg, var(--gold), var(--veil))', boxShadow: '0 18px 44px var(--shadow)' }}>
+                  <div style={{ aspectRatio: '2/3', position: 'relative', borderRadius: '6px', overflow: 'hidden' }}>
+                    <img src={card.imageUrl} alt={card.name} className="tara-arcana-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
                 </div>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '14px' }}>
-                <span className="tara-arcana-name" style={{ fontFamily: 'Cinzel, serif', fontSize: '16px', color: 'var(--ink)' }}>{card.name}</span>
-                <span style={{ fontFamily: 'Jost, sans-serif', fontSize: '11px', letterSpacing: '.2em', color: 'var(--ink-4)' }}>{toRoman(card.number)}</span>
-              </div>
-              <div className="tara-arcana-key" style={{ fontSize: '16px', fontWeight: 300, fontStyle: 'italic', color: 'var(--ink-3)', marginTop: '3px' }}>
-                {card.uprightMeaning.keywords[0]}
-              </div>
-            </button>
-          ))}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '14px' }}>
+                  <span className="tara-arcana-name" style={{ fontFamily: 'Cinzel, serif', fontSize: '16px', color: 'var(--ink)' }}>{card.name}</span>
+                  <span style={{ fontFamily: 'Jost, sans-serif', fontSize: '11px', letterSpacing: '.2em', color: 'var(--ink-4)' }}>{toRoman(card.number)}</span>
+                </div>
+                <div className="tara-arcana-key" style={{ fontSize: '16px', fontWeight: 300, fontStyle: 'italic', color: 'var(--ink-3)', marginTop: '3px' }}>
+                  {card.uprightMeaning.keywords[0]}
+                </div>
+              </button>
+            ))}
+          </div>
+          <div className="tara-arcana-fade tara-arcana-fade-right" aria-hidden="true" />
+          <button
+            type="button"
+            onClick={() => scrollArcanaCarousel(1)}
+            aria-label={t.home.carouselNext}
+            className="tara-carousel-arrow tara-carousel-arrow-next"
+          >
+            ›
+          </button>
         </div>
       </section>
 
@@ -262,7 +297,8 @@ export default function Home() {
       </section>
 
       <LibrarySection filter={filter} onFilterChange={setFilter} />
-      <JourneySection onExploreLibrary={() => setFilter('major')} />
+      <JourneySection />
+      <JourneyStory onExploreLibrary={() => setFilter('major')} />
       <ReadingSection />
       <FAQSection />
 

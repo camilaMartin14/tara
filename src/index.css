@@ -124,6 +124,102 @@ a:hover { color: var(--gold-2); }
 .tara-arcana-card:hover .tara-arcana-key,
 .tara-arcana-card:focus-visible .tara-arcana-key { color: var(--gold); }
 
+/* Major Arcana carousel */
+.tara-arcana-carousel-wrap { position: relative; padding: 0 54px; }
+.tara-arcana-carousel {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 54px;
+  padding: 4px 0 14px;
+  scrollbar-width: none;
+}
+.tara-arcana-carousel::-webkit-scrollbar { display: none; }
+.tara-arcana-carousel > .tara-arcana-card {
+  flex: 0 0 160px;
+  scroll-snap-align: start;
+}
+.tara-arcana-fade {
+  position: absolute;
+  top: 0;
+  bottom: 26px;
+  width: 46px;
+  pointer-events: none;
+  z-index: 1;
+}
+.tara-arcana-fade-left { left: 54px; background: linear-gradient(90deg, var(--bg), transparent); }
+.tara-arcana-fade-right { right: 54px; background: linear-gradient(270deg, var(--bg), transparent); }
+.tara-carousel-arrow {
+  position: absolute;
+  top: 45%;
+  translate: 0 -50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: border-color .4s ease, background .4s ease, color .4s ease;
+}
+.tara-carousel-arrow:hover { border-color: var(--gold); color: var(--gold); background: var(--veil); }
+.tara-carousel-arrow-prev { left: 4px; }
+.tara-carousel-arrow-next { right: 4px; }
+
+@media (max-width: 780px) {
+  .tara-arcana-carousel-wrap { padding: 0; }
+  .tara-arcana-carousel { scroll-padding-left: 0; }
+  .tara-arcana-carousel > .tara-arcana-card { flex-basis: 132px; }
+  .tara-arcana-fade { display: none; }
+  .tara-carousel-arrow { display: none; }
+}
+
+/* Journey story viewer */
+.tara-story-arrow {
+  position: fixed;
+  top: 50%;
+  translate: 0 -50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 101;
+  transition: border-color .4s ease, background .4s ease, color .4s ease, opacity .3s ease;
+}
+.tara-story-arrow:hover { border-color: var(--gold); color: var(--gold); background: var(--veil); }
+.tara-story-arrow-prev { left: clamp(10px, 3vw, 34px); }
+.tara-story-arrow-next { right: clamp(10px, 3vw, 34px); }
+
+@media (max-width: 640px) {
+  .tara-story-grid { grid-template-columns: 1fr !important; }
+  .tara-story-grid > button { max-width: 190px; margin: 0 auto; }
+  .tara-story-arrow { width: 40px; height: 40px; font-size: 17px; }
+}
+
+/* Journey plano teaser card */
+.tara-plano-card {
+  text-align: left; cursor: pointer; font: inherit; color: inherit;
+  transition: transform .55s cubic-bezier(.16,.6,.2,1), border-color .55s ease, background .55s ease;
+}
+.tara-plano-card:hover, .tara-plano-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--line-2) !important;
+  background: var(--veil) !important;
+}
+
 /* "Start here" step cards */
 .tara-step-card {
   text-decoration: none;
@@ -142,8 +238,8 @@ a:hover { color: var(--gold-2); }
 }
 .tara-suit-card:hover, .tara-suit-card:focus-visible {
   transform: translateY(-2px);
-  border-color: var(--line-2) !important;
-  background: var(--veil) !important;
+  border-color: var(--suit-accent) !important;
+  background: linear-gradient(160deg, var(--suit-glow), var(--panel)) !important;
 }
 
 /* Journey stage card */
@@ -184,6 +280,7 @@ a:hover { color: var(--gold-2); }
 .tara-cardofday-grid { grid-template-columns: minmax(0,1fr) minmax(0,260px); }
 .tara-fool-grid { grid-template-columns: minmax(0,180px) minmax(0,1fr); }
 .tara-modal-grid { grid-template-columns: minmax(0,260px) minmax(0,1fr); }
+.tara-modal-sticky { position: sticky; top: 12px; }
 
 @media (max-width: 780px) {
   .tara-hero-grid { grid-template-columns: 1fr; }
@@ -193,6 +290,7 @@ a:hover { color: var(--gold-2); }
   .tara-fool-grid { grid-template-columns: 1fr; }
   .tara-fool-grid > button { max-width: 200px; margin: 0 auto; }
   .tara-modal-grid { grid-template-columns: 1fr; }
+  .tara-modal-sticky { position: static; }
 }
 
 /* FAQ accordion */

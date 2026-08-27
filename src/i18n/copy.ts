@@ -35,6 +35,8 @@ export interface Copy {
     majorArcana: string;
     seeAll: string;
     journeyCta: string;
+    carouselPrev: string;
+    carouselNext: string;
     banner: { eyebrow: string; title: string; body: string; cta: string };
     footerLinks: [string, string][];
     credit: string;
@@ -62,6 +64,9 @@ export interface Copy {
     stageLabel: (n: number) => string;
     rangeLabel: (from: string, to: string) => string;
     libraryCta: string;
+    startCta: string;
+    step: (current: number, total: number) => string;
+    viewCard: string;
   };
   notFound: {
     eyebrow: string;
@@ -154,6 +159,8 @@ export const COPY: Record<Lang, Copy> = {
       majorArcana: 'Los Arcanos Mayores',
       seeAll: 'Ver las 78',
       journeyCta: 'Conocé su historia completa →',
+      carouselPrev: 'Carta anterior',
+      carouselNext: 'Carta siguiente',
       banner: {
         eyebrow: 'Práctica libre',
         title: 'La biblioteca es gratis. La práctica no tiene límite.',
@@ -238,6 +245,9 @@ export const COPY: Record<Lang, Copy> = {
       stageLabel: n => `Plano ${n}`,
       rangeLabel: (from, to) => `Cartas ${from} – ${to}`,
       libraryCta: 'Explorá cada carta en la biblioteca →',
+      startCta: 'Conocer el viaje',
+      step: (current, total) => `${current} de ${total}`,
+      viewCard: 'Ver ficha completa →',
     },
     notFound: {
       eyebrow: 'Extraviado en el camino',
@@ -322,6 +332,8 @@ export const COPY: Record<Lang, Copy> = {
       majorArcana: 'The Major Arcana',
       seeAll: 'See all 78',
       journeyCta: 'Learn its full story →',
+      carouselPrev: 'Previous card',
+      carouselNext: 'Next card',
       banner: {
         eyebrow: 'Free practice',
         title: 'The library is free. Practice has no limit.',
@@ -406,6 +418,9 @@ export const COPY: Record<Lang, Copy> = {
       stageLabel: n => `Stage ${n}`,
       rangeLabel: (from, to) => `Cards ${from} – ${to}`,
       libraryCta: 'Explore each card in the library →',
+      startCta: 'Begin the journey',
+      step: (current, total) => `${current} of ${total}`,
+      viewCard: 'See full card →',
     },
     notFound: {
       eyebrow: 'Lost along the way',

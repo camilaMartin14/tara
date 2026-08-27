@@ -92,7 +92,7 @@ export default function CardModal() {
         </div>
 
         <div className="tara-modal-grid" style={{ display: 'grid', gap: '48px', alignItems: 'start' }}>
-          <div>
+          <div className="tara-modal-sticky">
             <div
               style={{
                 position: 'relative', borderRadius: '16px', padding: '10px',

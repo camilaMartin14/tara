@@ -9,6 +9,13 @@ export const FILTER_KEYS: Filter[] = ['all', 'major', 'wands', 'cups', 'swords',
 const SUIT_KEYS: Suit[] = ['wands', 'cups', 'swords', 'pentacles'];
 const PAGE_SIZE = 24;
 
+const SUIT_COLORS: Record<Suit, { accent: string; glow: string }> = {
+  wands: { accent: '#E0663D', glow: 'rgba(224,102,61,.18)' },
+  cups: { accent: '#4FA3C4', glow: 'rgba(79,163,196,.18)' },
+  swords: { accent: '#D6C860', glow: 'rgba(214,200,96,.18)' },
+  pentacles: { accent: '#6FA05C', glow: 'rgba(111,160,92,.18)' },
+};
+
 interface Props {
   filter: Filter;
   onFilterChange: (filter: Filter) => void;
@@ -70,11 +77,15 @@ export default function LibrarySection({ filter, onFilterChange }: Props) {
                 onClick={() => onFilterChange(suit)}
                 className="tara-suit-card"
                 style={{
-                  textAlign: 'left', cursor: 'pointer', border: `1px solid ${filter === suit ? 'var(--line-2)' : 'var(--line)'}`,
-                  borderRadius: '6px', background: filter === suit ? 'var(--veil)' : 'var(--panel)', padding: '22px',
-                }}
+                  textAlign: 'left', cursor: 'pointer', borderRadius: '6px', padding: '19px 22px 22px',
+                  '--suit-accent': SUIT_COLORS[suit].accent,
+                  '--suit-glow': SUIT_COLORS[suit].glow,
+                  border: `1px solid ${filter === suit ? 'var(--suit-accent)' : 'var(--line)'}`,
+                  borderTop: '3px solid var(--suit-accent)',
+                  background: filter === suit ? 'linear-gradient(160deg, var(--suit-glow), var(--panel))' : 'var(--panel)',
+                } as React.CSSProperties}
               >
-                <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '10px', letterSpacing: '.24em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '8px' }}>
+                <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '10px', letterSpacing: '.24em', textTransform: 'uppercase', color: 'var(--suit-accent)', marginBottom: '8px' }}>
                   {item.element}
                 </div>
                 <div style={{ fontFamily: 'Cinzel, serif', fontSize: '18px', color: 'var(--ink)', marginBottom: '12px' }}>
@@ -143,9 +154,11 @@ export default function LibrarySection({ filter, onFilterChange }: Props) {
         </div>
       ) : (
         <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '24px' }}>
             {visibleCards.map(card => (
-              <CardTile key={card.id} card={card} />
+              <div key={card.id} style={{ flex: '1 1 140px', maxWidth: '300px' }}>
+                <CardTile card={card} />
+              </div>
             ))}
           </div>
           {hasMore && (
