@@ -28,12 +28,9 @@ export default function FAQSection() {
         <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '11px', letterSpacing: '.36em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '18px' }}>
           {t.faq.eyebrow}
         </div>
-        <h2 style={{ fontFamily: 'Cinzel, serif', fontWeight: 400, fontSize: 'clamp(32px,4vw,44px)', margin: '0 0 16px', color: 'var(--ink)', textShadow: '0 0 50px var(--veil)' }}>
+        <h2 style={{ fontFamily: 'Cinzel, serif', fontWeight: 400, fontSize: 'clamp(32px,4vw,44px)', margin: 0, color: 'var(--ink)', textShadow: '0 0 50px var(--veil)' }}>
           {t.faq.title}
         </h2>
-        <p style={{ fontSize: '18px', lineHeight: 1.6, fontWeight: 300, color: 'var(--ink-2)', margin: 0 }}>
-          {t.faq.subtitle}
-        </p>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>

@@ -42,7 +42,7 @@ const ES: LangPack = {
   suitLabel: { wands: 'Bastos', cups: 'Copas', swords: 'Espadas', pentacles: 'Oros' },
   arcanaLabel: arcana => (arcana === 'major' ? 'Arcano Mayor' : 'Arcano Menor'),
   allMajor: 'Toda la tirada está compuesta por Arcanos Mayores: las fuerzas en juego trascienden lo cotidiano y apuntan a un momento de transformación profunda en tu camino.',
-  someMajor: (majorCount, n) => `Con ${majorCount} de ${n} cartas de los Arcanos Mayores, esta lectura toca temas centrales de tu vida — no son circunstancias pasajeras, sino lecciones que el destino está poniendo frente a vos.`,
+  someMajor: (majorCount, n) => `Con ${majorCount} de ${n} cartas de los Arcanos Mayores, esta lectura toca temas centrales de tu vida: no son circunstancias pasajeras, sino lecciones que el destino está poniendo frente a vos.`,
   noMajor: 'Todos los Arcanos Menores hablan: esta situación está en gran parte en tus manos. Las elecciones del día a día y tu actitud serán determinantes.',
   oneMajor: (name, arcanaLabel, pos) => `${name} como ${arcanaLabel} ocupa la posición de "${pos}", marcando ese aspecto como el más significativo y cargado de propósito de toda la tirada.`,
   singleSuit: (element, suit, count, theme) => `El elemento ${element} (${suit}) aparece ${count} veces, concentrando la energía en ${theme}.`,
@@ -56,7 +56,7 @@ const ES: LangPack = {
     `Leídas en conjunto, las cartas sugieren que lo que ${pastReversed ? 'bloqueó' : 'impulsó'} el pasado sigue resonando en el presente y dará forma a lo que está por venir.`,
   celticCore: (situationName, situationKw, challengeName, challengeKw, hopesName, outcomeName, outcomeKw) =>
     `El núcleo de esta Cruz Celta es ${situationName} (${situationKw}), atravesado por el desafío de ${challengeName} (${challengeKw}). ` +
-    `Las esperanzas y miedos que rodean esta situación se manifiestan en ${hopesName}, mientras que el resultado final apunta hacia ${outcomeName} — ` +
+    `Las esperanzas y miedos que rodean esta situación se manifiestan en ${hopesName}, mientras que el resultado final apunta hacia ${outcomeName}, ` +
     `con la energía de "${outcomeKw}" como horizonte potencial de este camino.`,
   singleCard: (name, keyword, reversed) =>
     `${name} como respuesta directa señala "${keyword}" como la energía central de tu consulta. ${
@@ -77,7 +77,7 @@ const EN: LangPack = {
   suitLabel: { wands: 'Wands', cups: 'Cups', swords: 'Swords', pentacles: 'Pentacles' },
   arcanaLabel: arcana => (arcana === 'major' ? 'Major Arcanum' : 'Minor Arcanum'),
   allMajor: 'The whole spread is made up of Major Arcana: the forces at play go beyond the everyday and point to a moment of deep transformation on your path.',
-  someMajor: (majorCount, n) => `With ${majorCount} of ${n} cards from the Major Arcana, this reading touches central themes of your life — not passing circumstances, but lessons fate is placing in front of you.`,
+  someMajor: (majorCount, n) => `With ${majorCount} of ${n} cards from the Major Arcana, this reading touches central themes of your life: not passing circumstances, but lessons fate is placing in front of you.`,
   noMajor: 'Every card is a Minor Arcanum: this situation is largely in your hands. Day-to-day choices and your attitude will be decisive.',
   oneMajor: (name, arcanaLabel, pos) => `${name} as a ${arcanaLabel} sits in the "${pos}" position, marking that aspect as the most significant and purposeful of the whole spread.`,
   singleSuit: (element, suit, count, theme) => `The ${element} element (${suit}) appears ${count} times, concentrating the energy on ${theme}.`,
@@ -91,7 +91,7 @@ const EN: LangPack = {
     `Read together, the cards suggest that whatever ${pastReversed ? 'held back' : 'drove'} the past is still resonating in the present and will shape what's ahead.`,
   celticCore: (situationName, situationKw, challengeName, challengeKw, hopesName, outcomeName, outcomeKw) =>
     `The core of this Celtic Cross is ${situationName} (${situationKw}), crossed by the challenge of ${challengeName} (${challengeKw}). ` +
-    `The hopes and fears around this situation show up in ${hopesName}, while the final outcome points toward ${outcomeName} — ` +
+    `The hopes and fears around this situation show up in ${hopesName}, while the final outcome points toward ${outcomeName}, ` +
     `with the energy of "${outcomeKw}" as the potential horizon of this path.`,
   singleCard: (name, keyword, reversed) =>
     `${name} as a direct answer points to "${keyword}" as the central energy of your question. ${

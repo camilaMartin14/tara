@@ -21,7 +21,7 @@ export interface JourneyContent {
 const es: JourneyContent = {
   fool: {
     cardId: 'major-0',
-    blurb: 'El alma pura que inicia el viaje, antes de todo aprendizaje. Acá no hay lecciones todavía — sólo el salto de fe hacia lo desconocido.',
+    blurb: 'El alma pura que inicia el viaje, antes de todo aprendizaje. Acá no hay lecciones todavía, sólo el salto de fe hacia lo desconocido.',
   },
   stages: [
     {
@@ -32,8 +32,8 @@ const es: JourneyContent = {
       cards: [
         { cardId: 'major-1', blurb: 'Descubre la voluntad activa: tiene todas las herramientas para transformar sus ideas en acción.' },
         { cardId: 'major-2', blurb: 'Descubre su contracara: la intuición receptiva y el misterio que no se explica con la razón.' },
-        { cardId: 'major-3', blurb: 'Conoce a la madre arquetípica — abundancia, creación y afecto incondicional.' },
-        { cardId: 'major-4', blurb: 'Conoce al padre arquetípico — orden, estructura y autoridad.' },
+        { cardId: 'major-3', blurb: 'Conoce a la madre arquetípica: abundancia, creación y afecto incondicional.' },
+        { cardId: 'major-4', blurb: 'Conoce al padre arquetípico: orden, estructura y autoridad.' },
         { cardId: 'major-5', blurb: 'Aprende las tradiciones, la educación y los sistemas de creencias que heredó.' },
         { cardId: 'major-6', blurb: 'Enfrenta su primera decisión moral consciente: elegir a un igual, y elegirse a sí mismo.' },
         { cardId: 'major-7', blurb: 'Logra dominar sus impulsos contradictorios y toma el control de su propia dirección.' },
@@ -56,17 +56,17 @@ const es: JourneyContent = {
     },
     {
       title: 'La trascendencia y la iluminación',
-      intro: 'El tramo final del viaje enfrenta la sombra y busca la integración total. El Loco atraviesa la ruptura, la oscuridad y finalmente la luz — para cerrar el ciclo transformado.',
+      intro: 'El tramo final del viaje enfrenta la sombra y busca la integración total. El Loco atraviesa la ruptura, la oscuridad y finalmente la luz, para cerrar el ciclo transformado.',
       fromRoman: 'XV',
       toRoman: 'XXI',
       cards: [
-        { cardId: 'major-15', blurb: 'Reconoce sus apegos, miedos y cadenas — las que él mismo se puso.' },
+        { cardId: 'major-15', blurb: 'Reconoce sus apegos, miedos y cadenas: las que él mismo se puso.' },
         { cardId: 'major-16', blurb: 'Sufre la ruptura súbita de las ilusiones y estructuras falsas que había construido.' },
         { cardId: 'major-17', blurb: 'Encuentra esperanza renovada y fe después del colapso.' },
         { cardId: 'major-18', blurb: 'Cruza la noche oscura del alma, entre ilusiones e incertidumbres inconscientes.' },
         { cardId: 'major-19', blurb: 'Alcanza la claridad, la vitalidad y la alegría plena.' },
         { cardId: 'major-20', blurb: 'Escucha el llamado a despertar, perdonar el pasado y renacer con un propósito.' },
-        { cardId: 'major-21', blurb: 'Cierra el ciclo con plenitud y autorrealización — listo para empezar una nueva espiral.' },
+        { cardId: 'major-21', blurb: 'Cierra el ciclo con plenitud y autorrealización, listo para empezar una nueva espiral.' },
       ],
     },
   ],
@@ -75,7 +75,7 @@ const es: JourneyContent = {
 const en: JourneyContent = {
   fool: {
     cardId: 'major-0',
-    blurb: 'The pure soul beginning the journey, before any lesson. There is nothing to learn here yet — only the leap of faith into the unknown.',
+    blurb: 'The pure soul beginning the journey, before any lesson. There is nothing to learn here yet, only the leap of faith into the unknown.',
   },
   stages: [
     {
@@ -86,8 +86,8 @@ const en: JourneyContent = {
       cards: [
         { cardId: 'major-1', blurb: 'Discovers active will: he has every tool to turn ideas into action.' },
         { cardId: 'major-2', blurb: "Discovers his counterpart: receptive intuition and the mystery reason can't explain." },
-        { cardId: 'major-3', blurb: 'Meets the archetypal mother — abundance, creation and unconditional love.' },
-        { cardId: 'major-4', blurb: 'Meets the archetypal father — order, structure and authority.' },
+        { cardId: 'major-3', blurb: 'Meets the archetypal mother: abundance, creation and unconditional love.' },
+        { cardId: 'major-4', blurb: 'Meets the archetypal father: order, structure and authority.' },
         { cardId: 'major-5', blurb: 'Learns the traditions, education and belief systems he inherited.' },
         { cardId: 'major-6', blurb: 'Faces his first conscious moral choice: choosing an equal, and choosing himself.' },
         { cardId: 'major-7', blurb: 'Masters his contradictory impulses and takes control of his own direction.' },
@@ -110,17 +110,17 @@ const en: JourneyContent = {
     },
     {
       title: 'Transcendence and illumination',
-      intro: 'The final stretch faces the shadow and seeks full integration. The Fool moves through rupture, darkness, and finally light — closing the cycle transformed.',
+      intro: 'The final stretch faces the shadow and seeks full integration. The Fool moves through rupture, darkness, and finally light, closing the cycle transformed.',
       fromRoman: 'XV',
       toRoman: 'XXI',
       cards: [
-        { cardId: 'major-15', blurb: 'Recognises his attachments, fears and chains — the ones he put on himself.' },
+        { cardId: 'major-15', blurb: 'Recognises his attachments, fears and chains: the ones he put on himself.' },
         { cardId: 'major-16', blurb: 'Suffers the sudden collapse of illusions and false structures he had built.' },
         { cardId: 'major-17', blurb: 'Finds renewed hope and faith after the collapse.' },
         { cardId: 'major-18', blurb: 'Crosses the dark night of the soul, through illusions and unconscious uncertainty.' },
         { cardId: 'major-19', blurb: 'Reaches clarity, vitality and full joy.' },
         { cardId: 'major-20', blurb: 'Hears the call to wake up, forgive the past and be reborn with purpose.' },
-        { cardId: 'major-21', blurb: 'Closes the cycle in fullness and self-realisation — ready to begin a new spiral.' },
+        { cardId: 'major-21', blurb: 'Closes the cycle in fullness and self-realisation, ready to begin a new spiral.' },
       ],
     },
   ],

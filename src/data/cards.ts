@@ -353,7 +353,7 @@ export const cards: TarotCard[] = [
   },
 
   // =====================
-  // BASTOS (WANDS) — Fuego
+  // BASTOS (WANDS) - Fuego
   // =====================
   {
     id: 'wands-1',
@@ -581,7 +581,7 @@ export const cards: TarotCard[] = [
   },
 
   // =====================
-  // COPAS (CUPS) — Agua
+  // COPAS (CUPS) - Agua
   // =====================
   {
     id: 'cups-1',
@@ -809,7 +809,7 @@ export const cards: TarotCard[] = [
   },
 
   // =====================
-  // ESPADAS (SWORDS) — Aire
+  // ESPADAS (SWORDS) - Aire
   // =====================
   {
     id: 'swords-1',
@@ -1037,7 +1037,7 @@ export const cards: TarotCard[] = [
   },
 
   // =====================
-  // OROS (PENTACLES) — Tierra
+  // OROS (PENTACLES) - Tierra
   // =====================
   {
     id: 'pentacles-1',

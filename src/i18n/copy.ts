@@ -77,7 +77,6 @@ export interface Copy {
   faq: {
     eyebrow: string;
     title: string;
-    subtitle: string;
     items: [string, string][];
   };
   cardDetail: {
@@ -144,7 +143,7 @@ export const COPY: Record<Lang, Copy> = {
       steps: [
         ['I', 'Conocé el mazo', 'Veintidós arcanos mayores y cuatro palos. Antes de interpretar, aprendé a reconocer: qué carta es y a qué familia pertenece.'],
         ['II', 'Explorá carta por carta', 'Entrá a la biblioteca, elegí una carta y leé su significado al derecho y al revés. En poco tiempo el mazo te empieza a hablar sin que consultes el libro.'],
-        ['III', 'Tirá de tres', 'Tu primera tirada real. Formulá una pregunta clara y practicá leer las cartas juntas en vez de por separado.'],
+        ['III', 'Tirá de tres', 'Tu primera tirada real. Escribí o pensá una pregunta clara y practicá leer las cartas juntas en vez de por separado.'],
       ],
       cardOfDay: {
         eyebrow: 'Ritual diario',
@@ -162,7 +161,7 @@ export const COPY: Record<Lang, Copy> = {
       banner: {
         eyebrow: 'Práctica libre',
         title: 'La biblioteca es gratis. La práctica no tiene límite.',
-        body: 'Consultá el significado de cualquier carta al derecho y al revés, y hacé todas las tiradas que quieras — de una carta, de tres, o la Cruz Celta completa.',
+        body: 'Consultá el significado de cualquier carta al derecho y al revés, y hacé todas las tiradas que quieras: de una carta, de tres, o la Cruz Celta completa.',
         cta: 'Hacer una tirada',
       },
       footerLinks: [
@@ -238,7 +237,7 @@ export const COPY: Record<Lang, Copy> = {
     journey: {
       eyebrow: 'Arcanos Mayores · una historia',
       title: 'El Viaje del Loco',
-      subtitle: 'Las 22 cartas de los Arcanos Mayores no son una lista para memorizar: son los pasos de una misma alma atravesando la vida, del impulso puro de El Loco a la plenitud de El Mundo.',
+      subtitle: 'Las 22 cartas de los Arcanos Mayores pueden interpretarse como los pasos de una misma alma atravesando la vida, del impulso puro de El Loco a la plenitud de El Mundo.',
       foolLabel: 'El punto de partida',
       stageLabel: n => `Plano ${n}`,
       rangeLabel: (from, to) => `Cartas ${from} – ${to}`,
@@ -251,21 +250,20 @@ export const COPY: Record<Lang, Copy> = {
       eyebrow: 'Extraviado en el camino',
       title: '404',
       subtitle: 'El Loco se salió del mapa.',
-      body: 'Esta carta no pertenece a este mazo — el vínculo puede estar roto, o el destino te trajo a un lugar que todavía no existe.',
+      body: 'Esta carta no pertenece a este mazo: el vínculo puede estar roto, o el destino te trajo a un lugar que todavía no existe.',
       cta: 'Volver al inicio',
     },
     faq: {
-      eyebrow: 'Antes de seguir',
+      eyebrow: '˗ˏˋ ★ ˎˊ˗',
       title: 'Preguntas frecuentes',
-      subtitle: 'Dudas típicas de quien recién empieza a leer tarot.',
       items: [
         [
           '¿Por qué esta app enseña con el mazo Rider-Waite-Smith?',
-          'Porque es el más gráfico y descriptivo: sus 78 cartas —incluidas las 56 menores— muestran escenas completas, no solo símbolos sueltos. Eso permite leer intuitivamente a partir de la imagen, en vez de memorizar 78 significados de memoria. También es el mazo más estudiado y la base de casi todos los mazos modernos.',
+          'Porque es el más gráfico y descriptivo: sus 78 cartas, incluidas las 56 menores, muestran escenas completas, no solo símbolos sueltos. Eso permite leer intuitivamente a partir de la imagen, en vez de memorizar 78 significados de memoria. También es el mazo más estudiado y la base de casi todos los mazos modernos.',
         ],
         [
           '¿Cuál es la diferencia entre Arcanos Mayores y Menores?',
-          'Los 22 Arcanos Mayores representan arquetipos y lecciones de vida profundas (podés recorrerlos como historia en "El Viaje"). Los 56 Arcanos Menores describen situaciones cotidianas y se dividen en 4 palos —Bastos, Copas, Espadas y Oros— cada uno asociado a un elemento.',
+          'Los 22 Arcanos Mayores representan arquetipos y lecciones de vida profundas (podés recorrerlos como historia en "El Viaje"). Los 56 Arcanos Menores describen situaciones cotidianas y se dividen en 4 palos: Bastos, Copas, Espadas y Oros, cada uno asociado a un elemento.',
         ],
         [
           '¿Qué significa que una carta salga invertida?',
@@ -281,7 +279,7 @@ export const COPY: Record<Lang, Copy> = {
         ],
         [
           '¿Con qué frecuencia conviene practicar?',
-          'Una carta por día alcanza para entrenar el ojo (por eso existe la "Carta del día"). Reservá las tiradas completas para cuando tengas una pregunta real — consultar lo mismo una y otra vez suele confundir más que aclarar.',
+          'Una carta por día alcanza para entrenar el ojo (por eso existe la "Carta del día"). Reservá las tiradas completas para cuando tengas una pregunta real: consultar lo mismo una y otra vez suele confundir más que aclarar.',
         ],
       ],
     },
@@ -334,7 +332,7 @@ export const COPY: Record<Lang, Copy> = {
       banner: {
         eyebrow: 'Free practice',
         title: 'The library is free. Practice has no limit.',
-        body: 'Look up any card upright or reversed, and draw as many spreads as you like — a single card, three, or the full Celtic Cross.',
+        body: 'Look up any card upright or reversed, and draw as many spreads as you like: a single card, three, or the full Celtic Cross.',
         cta: 'Draw a spread',
       },
       footerLinks: [
@@ -423,21 +421,20 @@ export const COPY: Record<Lang, Copy> = {
       eyebrow: 'Lost along the way',
       title: '404',
       subtitle: 'The Fool wandered off the map.',
-      body: "This card isn't part of this deck — the link may be broken, or fate has led you somewhere that doesn't exist yet.",
+      body: "This card isn't part of this deck: the link may be broken, or fate has led you somewhere that doesn't exist yet.",
       cta: 'Back to home',
     },
     faq: {
       eyebrow: 'Before you go on',
       title: 'Frequently asked questions',
-      subtitle: 'Common doubts for people just starting to read tarot.',
       items: [
         [
           'Why does this app teach with the Rider-Waite-Smith deck?',
-          "Because it's the most graphic and descriptive: all 78 cards — including the 56 minors — show full illustrated scenes, not just loose symbols. That lets you read intuitively from the image itself instead of memorising 78 meanings by heart. It's also the most studied deck and the basis for nearly every modern deck.",
+          "Because it's the most graphic and descriptive: all 78 cards, including the 56 minors, show full illustrated scenes, not just loose symbols. That lets you read intuitively from the image itself instead of memorising 78 meanings by heart. It's also the most studied deck and the basis for nearly every modern deck.",
         ],
         [
           "What's the difference between Major and Minor Arcana?",
-          'The 22 Major Arcana represent archetypes and deep life lessons (you can walk through them as a story in "The Journey"). The 56 Minor Arcana describe everyday situations and split into 4 suits — Wands, Cups, Swords and Pentacles — each tied to an element.',
+          'The 22 Major Arcana represent archetypes and deep life lessons (you can walk through them as a story in "The Journey"). The 56 Minor Arcana describe everyday situations and split into 4 suits: Wands, Cups, Swords and Pentacles, each tied to an element.',
         ],
         [
           'What does it mean when a card comes up reversed?',
@@ -453,7 +450,7 @@ export const COPY: Record<Lang, Copy> = {
         ],
         [
           'How often should I practise?',
-          'One card a day is enough to train your eye (that\'s what the "Card of the day" is for). Save full spreads for when you have a real question — asking the same one over and over tends to confuse more than clarify.',
+          'One card a day is enough to train your eye (that\'s what the "Card of the day" is for). Save full spreads for when you have a real question: asking the same one over and over tends to confuse more than clarify.',
         ],
       ],
     },
