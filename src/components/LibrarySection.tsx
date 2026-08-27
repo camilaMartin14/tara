@@ -64,10 +64,10 @@ export default function LibrarySection({ filter, onFilterChange }: Props) {
       </div>
 
       <div style={{ marginBottom: '52px' }}>
-        <h3 style={{ fontFamily: 'Cinzel, serif', fontWeight: 400, fontSize: '22px', margin: '0 0 8px', color: 'var(--ink)' }}>
+        <h3 style={{ fontFamily: 'Cinzel, serif', fontWeight: 400, fontSize: 'clamp(26px,3vw,32px)', margin: '0 0 12px', color: 'var(--ink)' }}>
           {t.library.fundamentals.title}
         </h3>
-        <p style={{ fontSize: '16px', lineHeight: 1.6, fontWeight: 300, color: 'var(--ink-3)', margin: '0 0 24px', maxWidth: '68ch' }}>
+        <p style={{ fontSize: '18px', lineHeight: 1.65, fontWeight: 300, color: 'var(--ink-2)', margin: '0 0 28px', maxWidth: '68ch' }}>
           {t.library.fundamentals.subtitle}
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px,1fr))', gap: '18px' }}>
