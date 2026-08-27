@@ -140,16 +140,6 @@ a:hover { color: var(--gold-2); }
   flex: 0 0 160px;
   scroll-snap-align: start;
 }
-.tara-arcana-fade {
-  position: absolute;
-  top: 0;
-  bottom: 26px;
-  width: 46px;
-  pointer-events: none;
-  z-index: 1;
-}
-.tara-arcana-fade-left { left: 54px; background: linear-gradient(90deg, var(--bg), transparent); }
-.tara-arcana-fade-right { right: 54px; background: linear-gradient(270deg, var(--bg), transparent); }
 .tara-carousel-arrow {
   position: absolute;
   top: 45%;
@@ -176,7 +166,6 @@ a:hover { color: var(--gold-2); }
   .tara-arcana-carousel-wrap { padding: 0; }
   .tara-arcana-carousel { scroll-padding-left: 0; }
   .tara-arcana-carousel > .tara-arcana-card { flex-basis: 132px; }
-  .tara-arcana-fade { display: none; }
   .tara-carousel-arrow { display: none; }
 }
 
