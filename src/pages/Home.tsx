@@ -300,10 +300,10 @@ export default function Home() {
       <ReadingSection />
 
       <div style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', bottom: '105px', left: '50%', transform: 'translateX(-50%)', width: '460px', height: '460px', pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', bottom: '320px', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '700px', pointerEvents: 'none' }}>
           <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '1px solid var(--line-2)', animation: 'tara-spin 90s linear infinite' }} />
-          <div style={{ position: 'absolute', inset: '45px', borderRadius: '50%', border: '1px dashed var(--line)', animation: 'tara-spin-rev 70s linear infinite' }} />
-          <div style={{ position: 'absolute', inset: '95px', borderRadius: '50%', border: '1px solid var(--veil)', boxShadow: '0 0 90px var(--veil) inset', animation: 'tara-glow 6s ease-in-out infinite' }} />
+          <div style={{ position: 'absolute', inset: '69px', borderRadius: '50%', border: '1px dashed var(--line)', animation: 'tara-spin-rev 70s linear infinite' }} />
+          <div style={{ position: 'absolute', inset: '145px', borderRadius: '50%', border: '1px solid var(--veil)', boxShadow: '0 0 90px var(--veil) inset', animation: 'tara-glow 6s ease-in-out infinite' }} />
         </div>
 
         <FAQSection />
